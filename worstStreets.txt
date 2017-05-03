@@ -1,0 +1,9 @@
+TAXI was the offending vehicle in 47 accidents.
+PASSENGER VEHICLE was the offending vehicle in 29 accidents.
+UNKNOWN was the offending vehicle in 8 accidents.
+LIVERY VEHICLE was the offending vehicle in 8 accidents.
+SPORT UTILITY / STATION WAGON was the offending vehicle in 7 accidents.
+VAN was the offending vehicle in 5 accidents.
+BUS was the offending vehicle in 2 accidents.
+SMALL COM VEH(4 TIRES)  was the offending vehicle in 2 accidents.
+ was the offending vehicle in 1 accidents.
