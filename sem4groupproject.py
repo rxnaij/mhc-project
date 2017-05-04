@@ -109,6 +109,24 @@ def worstSurfaces(data):
     worstSurfacesFile.close()
     return worstSurfaces
 
+# Retrives the times when accidents occurred from most to least often
+
+def worstTimes(data):
+    times = {}
+    for index, row in data.iterrows():
+        timeOfDay = row["TIME"]
+        timeSegments = timeOfDay.split(':')
+        hour = timeSegments[0]
+        times[hour] = times.get(hour, 0) + 1
+    worst = sorted(times, key = times.__getitem__, reverse=True)
+    worstTimesFile = open('listWorstTimes.txt', "w+")
+    for i in range(len(worst)):
+        fileStr = str(str(worst[i]) + str(" was the time when an accident occurred in ") + str(times[worst[i]]) + str(" accidents.\n"))
+        worstTimesFile.write(fileStr)
+        
+    worstTimesFile.close()
+    return worstTimes
+
 ## code to show time of accident and frequency.
 
 def timeGraph():
@@ -184,6 +202,7 @@ worstStreets()
 worstCauses(1)
 worstCauses(2)
 worstSurfaces(accident)
+worstTimes(accident)
 
 ## code to create map
 
@@ -233,3 +252,112 @@ folium.LayerControl().add_to(mapaccident)
 
 #Save map
 mapaccident.save(outfile='bikeaccidentLocations.html')
+
+
+## create map for accidents during peak hours
+mappeak = folium.Map(location=[40.715441,-73.804684], zoom_start=10)
+peak_coords = []
+peak_popups = []
+peak_icons = []
+for index,row in accident.iterrows():
+    timeOfDay = row["TIME"]
+    timeSegments = timeOfDay.split(':')
+    hour = timeSegments[0]
+    if hour == '19' or hour == '20':
+        lat = row["LATITUDE"]
+        long = row["LONGITUDE"]
+        name = row["DATE"]
+        on_street = row["ON STREET NAME"]
+        cross_street = row["CROSS STREET NAME"]
+        surface = row['SURFACE TYPE']
+        descr = str(name) + '\n' + str(on_street) + ", " + str(cross_street) + '\n' + str(surface)
+        peak_coords.append([lat,long])
+        peak_popups.append(descr)
+
+mappeak.add_children(MarkerCluster(locations=peak_coords, popups = peak_popups))
+
+# Add GeoJSON layers of bike lanes
+mappeak.choropleth(geo_path='union_square-map.geojson',
+               fill_color='yellow',
+               fill_opacity=0.2,
+               line_color='black',
+               line_weight=1,
+               legend_name='Union Square, 10003'
+              )
+mappeak.choropleth(geo_path='protected-map.geojson',
+               line_color='green',
+               line_weight=5,
+               legend_name='Protected bike lane'
+              )
+mappeak.choropleth(geo_path='normal-map.geojson',
+               line_color='cyan',
+               line_weight=5,
+               legend_name='Normal bike lane'
+              )
+mappeak.choropleth(geo_path='shared-map.geojson',
+               line_color='magenta',
+               line_weight=5,
+               legend_name='Shared bike lane'
+              )
+folium.LayerControl().add_to(mappeak)
+
+## create map for accidents during dip hours
+mapdip = folium.Map(location=[40.715441,-73.804684], zoom_start=10)
+dip_coords = []
+dip_popups = []
+dip_icons = []
+for index,row in accident.iterrows():
+    timeOfDay = row["TIME"]
+    timeSegments = timeOfDay.split(':')
+    hour = timeSegments[0]
+    if hour == '3' or hour == '7':
+        lat = row["LATITUDE"]
+        long = row["LONGITUDE"]
+        name = row["DATE"]
+        on_street = row["ON STREET NAME"]
+        cross_street = row["CROSS STREET NAME"]
+        surface = row['SURFACE TYPE']
+        descr = str(name) + '\n' + str(on_street) + ", " + str(cross_street) + '\n' + str(surface)
+        dip_coords.append([lat,long])
+        dip_popups.append(descr)
+
+mapdip.add_children(MarkerCluster(locations=dip_coords, popups = dip_popups))
+
+# Add GeoJSON layers of bike lanes
+mapdip.choropleth(geo_path='union_square-map.geojson',
+               fill_color='yellow',
+               fill_opacity=0.2,
+               line_color='black',
+               line_weight=1,
+               legend_name='Union Square, 10003'
+              )
+mapdip.choropleth(geo_path='protected-map.geojson',
+               line_color='green',
+               line_weight=5,
+               legend_name='Protected bike lane'
+              )
+mapdip.choropleth(geo_path='normal-map.geojson',
+               line_color='cyan',
+               line_weight=5,
+               legend_name='Normal bike lane'
+              )
+mapdip.choropleth(geo_path='shared-map.geojson',
+               line_color='magenta',
+               line_weight=5,
+               legend_name='Shared bike lane'
+              )
+folium.LayerControl().add_to(mapdip)
+
+#Save map
+mapdip.save(outfile='dipTime_bikeaccidentLocations.html')
+
+## create map of only union square 10003 region
+mapUnionSquare = folium.Map(location=[40.715441,-73.804684], zoom_start=10)
+mapUnionSquare.choropleth(geo_path='union_square-map.geojson',
+               fill_color='yellow',
+               fill_opacity=0.2,
+               line_color='black',
+               line_weight=2,
+               legend_name='Union Square, 10003'
+              )
+mapUnionSquare.save(outfile='unionsquaremap.html')

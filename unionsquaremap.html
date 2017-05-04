@@ -1,0 +1,175 @@
+
+        <!DOCTYPE html>
+        <head>
+            
+        
+            <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        
+            
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+        
+        
+        
+            
+        
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        
+        
+        
+            
+        
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        
+        
+        
+            
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.min.js"></script>
+        
+        
+        
+            
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster-src.js"></script>
+        
+        
+        
+            
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster.js"></script>
+        
+        
+        
+            
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
+        
+        
+        
+            
+        
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+        
+        
+        
+            
+        
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
+        
+        
+        
+            
+        
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
+        
+        
+        
+            
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css" />
+        
+        
+        
+            
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.Default.css" />
+        
+        
+        
+            
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.css" />
+        
+        
+        
+            
+        
+            <link rel="stylesheet" href="https://raw.githubusercontent.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css" />
+        
+        
+        
+            
+            <style>
+
+            html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                }
+
+            #map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+            
+        
+            
+            <style> #map_422ef90a26314d0398a5383728ff53be {
+                position : relative;
+                width : 100.0%;
+                height: 100.0%;
+                left: 0.0%;
+                top: 0.0%;
+                }
+            </style>
+        
+        
+        
+        </head>
+        <body>
+            
+        
+            
+            <div class="folium-map" id="map_422ef90a26314d0398a5383728ff53be" ></div>
+        
+        
+        
+        </body>
+        <script>
+            
+        
+            
+
+            var southWest = L.latLng(-90, -180);
+            var northEast = L.latLng(90, 180);
+            var bounds = L.latLngBounds(southWest, northEast);
+
+            var map_422ef90a26314d0398a5383728ff53be = L.map('map_422ef90a26314d0398a5383728ff53be', {
+                                           center:[40.715441,-73.804684],
+                                           zoom: 10,
+                                           maxBounds: bounds,
+                                           layers: [],
+                                           crs: L.CRS.EPSG3857
+                                         });
+            
+        
+        
+            
+            var tile_layer_88ffb527571b4ceaa0ababe6ce16d61c = L.tileLayer(
+                'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+                {
+                    maxZoom: 18,
+                    minZoom: 1,
+                    attribution: 'Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>.',
+                    detectRetina: false
+                    }
+                ).addTo(map_422ef90a26314d0398a5383728ff53be);
+
+        
+        
+            
+                var geo_json_2a0ab2578b904db49849cdee54bd2d0b = L.geoJson(
+                    {"features": [{"geometry": {"coordinates": [[[-73.97983074188232, 40.734997780748], [-73.98448689149158, 40.73696655420955], [-73.98410088945143, 40.737551138821], [-73.98648238418126, 40.73854224491512], [-73.9868683862214, 40.73800637568796], [-73.99098861335528, 40.73972989238724], [-73.997061252594, 40.731438198013336], [-73.9956240842838, 40.73075450279247], [-73.99658908938417, 40.72953493834445], [-73.99334942940438, 40.72790885241375], [-73.99373543144452, 40.727290670985546], [-73.99193293977491, 40.72641379406837], [-73.99274802444005, 40.72420144368538], [-73.98862779730618, 40.72293316385307], [-73.97983074188232, 40.734997780748]]], "type": "Polygon"}, "properties": {"direction": "", "fill": "#ffcc5f", "fill-opacity": 0.3, "lane-type": "", "stroke": "#434343", "stroke-opacity": 1, "stroke-width": 2, "style": {"color": "black", "fillColor": "yellow", "fillOpacity": 0.2, "opactiy": 1, "weight": 2}}, "type": "Feature"}], "type": "FeatureCollection"})
+                    .addTo(map_422ef90a26314d0398a5383728ff53be);
+                geo_json_2a0ab2578b904db49849cdee54bd2d0b.setStyle(function(feature) {return feature.properties.style;});
+            
+        
+        
+        </script>
+        
