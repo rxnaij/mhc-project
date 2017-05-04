@@ -1,0 +1,4 @@
+street was the surface on which an accident occurred in 72 accidents.
+protected was the surface on which an accident occurred in 18 accidents.
+normal was the surface on which an accident occurred in 14 accidents.
+shared was the surface on which an accident occurred in 5 accidents.

@@ -1,0 +1,32 @@
+EAST 14 STREET                   was the offending vehicle in 14 accidents.
+2 AVENUE                         was the offending vehicle in 13 accidents.
+3 AVENUE                         was the offending vehicle in 8 accidents.
+5 AVENUE                         was the offending vehicle in 8 accidents.
+BROADWAY                         was the offending vehicle in 7 accidents.
+EAST 12 STREET                   was the offending vehicle in 6 accidents.
+UNION SQUARE EAST                was the offending vehicle in 6 accidents.
+EAST 17 STREET                   was the offending vehicle in 4 accidents.
+PARK AVENUE SOUTH                was the offending vehicle in 4 accidents.
+EAST 9 STREET                    was the offending vehicle in 3 accidents.
+4 AVENUE                         was the offending vehicle in 3 accidents.
+EAST 13 STREET                   was the offending vehicle in 3 accidents.
+EAST 10 STREET                   was the offending vehicle in 3 accidents.
+EAST 7 STREET                    was the offending vehicle in 2 accidents.
+EAST 16 STREET                   was the offending vehicle in 2 accidents.
+WEST 14 STREET                   was the offending vehicle in 2 accidents.
+LAFAYETTE STREET                 was the offending vehicle in 2 accidents.
+IRVING PLACE                     was the offending vehicle in 2 accidents.
+EAST 18 STREET                   was the offending vehicle in 2 accidents.
+WEST 11 STREET                   was the offending vehicle in 2 accidents.
+WEST 8 STREET                    was the offending vehicle in 2 accidents.
+EAST 11 STREET                   was the offending vehicle in 1 accidents.
+WEST 20 STREET                   was the offending vehicle in 1 accidents.
+ was the offending vehicle in 1 accidents.
+ASTOR PLACE                      was the offending vehicle in 1 accidents.
+WEST 19 STREET                   was the offending vehicle in 1 accidents.
+EAST 20 STREET                   was the offending vehicle in 1 accidents.
+SAINT MARKS PLACE                was the offending vehicle in 1 accidents.
+EAST 19 STREET                   was the offending vehicle in 1 accidents.
+WEST 18 STREET                   was the offending vehicle in 1 accidents.
+WEST 17 STREET                   was the offending vehicle in 1 accidents.
+EAST 5 STREET                    was the offending vehicle in 1 accidents.
